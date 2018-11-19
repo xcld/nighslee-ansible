@@ -91,9 +91,9 @@
            owner: crazysal
            remote_src: yes
       - name: Extract appsrc1 into dir
-          become: yes
-          become_method: sudo
-          unarchive:
+        become: yes
+        become_method: sudo
+        unarchive:
             src: "http://nighslee.com/ni/shop.tar.gz"
             dest: "/home/crazysal"
             group: crazysal
