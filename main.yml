@@ -1,5 +1,5 @@
 ---
-- hosts: genkifitness_front
+- hosts: nighslee
   pre_tasks:
       - name: update apt cache if needed.
         become: yes
@@ -90,6 +90,15 @@
            group: crazysal
            owner: crazysal
            remote_src: yes
+      - name: Extract appsrc1 into dir
+          become: yes
+          become_method: sudo
+          unarchive:
+            src: "http://nighslee.com/ni/shop.tar.gz"
+            dest: "/home/crazysal"
+            group: crazysal
+            owner: crazysal
+            remote_src: yes
       - name: start memcache,nginx,php
         become: yes
         become_method: sudo
